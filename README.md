@@ -7,3 +7,4 @@ I have plans to add various math functions not found in the standard math librar
  * Points and Lines
  * Mean, Median, Mode, Range
  * Sequences (arithmetic and geometric)
+ * Metric to Imperial conversions
