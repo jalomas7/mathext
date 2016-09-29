@@ -17,6 +17,8 @@
 
 package conversion
 
+/*IMPERIAL UNITS*/
+
 func InchesToFeet(i float64) float64 {
 	return i/12
 }
@@ -59,4 +61,71 @@ func YardsToInches(y float64) float64 {
 
 func YardsToMiles(y float64) float64 {
 	return FeetToMiles(YardsToFeet(y))
+}
+
+/*METRIC UNITS*/
+
+func scaleDown(u float64, scale int) float64 {
+	if scale <= 0 {
+		return u
+	}else {
+		return scaleDown(u*10, scale-1)
+	}
+}
+
+
+func scaleUp(u float64, scale int) float64 {
+	if scale <= 0 {
+		return u
+	}else {
+		return scaleUp(u/10, scale-1)
+	}
+}
+
+func CentimeterToDecimeter(c float64) float64 {
+	return scaleUp(c, 1)
+}
+
+func CentimeterToMeter(c float64) float64 {
+	return scaleUp(c, 2)
+}
+
+func CentimeterToKilometer(c float64) float64 {
+	return scaleUp(c, 4)
+}
+
+func DecimeterToCentimeter(d float64) float64 {
+	return scaleDown(d, 1)
+}
+
+func DecimeterToMeter(d float64) float64 {
+	return scaleUp(d, 1)
+}
+
+func DecimeterToKilometer(d float64) float64 {
+	return scaleUp(d, 3)
+}
+
+func MeterToDecimeter(m float64) float64 {
+	return scaleDown(m, 1)
+}
+
+func MeterToCentimeter(m float64) float64 {
+	return scaleDown(m, 2)
+}
+
+func MeterToKilometer(m float64) float64 {
+	return scaleUp(m, 2)
+}
+
+func KilometerToMeter(k float64) float64 {
+	return scaleDown(k, 2)
+}
+
+func KilometerToDecimeter(k float64) float64 {
+	return scaleDown(k, 3)
+}
+
+func KilometerToCentimeter(k float64) float64 {
+	return scaleDown(k, 4)
 }
