@@ -47,5 +47,5 @@ func KelvinToCelsius(k float64) float64 {
 
 //returns the Farenheit temperature of k
 func KelvinToFarenheit(k float64) float64 {
-	return CelsiusToFarenheit(KevinToCelsius(k))
+	return CelsiusToFahrenheit(KelvinToCelsius(k))
 }
