@@ -1,6 +1,8 @@
 /*
     Copyright (C) 2016  Jacob Massengill
 
+    length.go provides conversions between various imperial and metric units
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -65,6 +67,7 @@ func YardsToMiles(y float64) float64 {
 
 /*METRIC UNITS*/
 
+//multiplies u by 10 scale times
 func scaleDown(u float64, scale int) float64 {
 	if scale <= 0 {
 		return u
@@ -74,6 +77,7 @@ func scaleDown(u float64, scale int) float64 {
 }
 
 
+//divides u by 10 scale times
 func scaleUp(u float64, scale int) float64 {
 	if scale <= 0 {
 		return u
